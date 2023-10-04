@@ -31,7 +31,10 @@
             <p class="exercice-txt">Ecrivez la phrase suivante dans une balise HTML P en utilisant les 2 variables ci-dessous :</p>
             <p class="exercice-txt">"<i>Firstname</i> a obtenu <i>score</i> points à cette partie."</p>
             <div class="exercice-sandbox">
-
+            <?php
+                $firstname = "Michel";
+                $score = 327;
+            ?>
             </div>
         </section>
 
@@ -41,7 +44,14 @@
             <h2 class="exercice-ttl">Question 2</h2>
             <p class="exercice-txt">Afficher dans une liste HTML le nom des produits suivants et leurs prix.</p>
             <div class="exercice-sandbox">
-                
+            <?php
+                $nameProduct1 = "arc";
+                $priceProduct1 = 10.30;
+                $nameProduct2 = "flèche";
+                $priceProduct2 = 2.90;
+                $nameProduct3 = "potion";
+                $priceProduct3 = 5.20;
+            ?>
             </div>
         </section>
 
@@ -50,7 +60,11 @@
             <h2 class="exercice-ttl">Question 3</h2>
             <p class="exercice-txt">Calculer le montant total de la commande des produits ci-dessus avec les quantités ci-dessous et appliquez lui une remise de 10%.</p>
             <div class="exercice-sandbox">
-                
+            <?php
+                $quantityProduct1 = 1;
+                $quantityProduct2 = 10;
+                $quantityProduct3 = 4;
+            ?>
             </div>
         </section>
 
@@ -83,7 +97,18 @@
             <h2 class="exercice-ttl">Question 6</h2>
             <p class="exercice-txt">Parmis les scores suivants, affichez le prénom des joueurs qui ont obtenus entre 50 et 150 points.</p>
             <div class="exercice-sandbox">
-                
+            <?php
+                $namePlayer1 = "Tim";
+                $scorePlayer1 = 67;
+                $namePlayer2 = "Morgan";
+                $scorePlayer2 = 198;
+                $namePlayer3 = "Hamed";
+                $scorePlayer3 = 21;
+                $namePlayer4 = "Camille";
+                $scorePlayer4 = 134;
+                $namePlayer5 = "Kevin";
+                $scorePlayer5 = 103;
+            ?>
             </div>
         </section>
 
