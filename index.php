@@ -211,7 +211,26 @@
             <h2 class="exercice-ttl">Question 8</h2>
             <p class="exercice-txt">Affichez le prénom du joueur le plus long en nombre de caractères.</p>
             <div class="exercice-sandbox">
-                
+            <?php
+
+            $longestName = $namePlayer1;
+
+            if (strlen($namePlayer2) > strlen($longestName)) {
+                $longestName = $namePlayer2;
+            }
+            if (strlen($namePlayer3) > strlen($longestName)) {
+                $longestName = $namePlayer3;
+            }
+            if (strlen($namePlayer4) > strlen($longestName)) {
+                $longestName = $namePlayer4;
+            }
+            if (strlen($namePlayer5) > strlen($longestName)) {
+                $longestName = $namePlayer5;
+            }
+
+            echo $longestName;
+
+            ?>
             </div>
         </section>
 
