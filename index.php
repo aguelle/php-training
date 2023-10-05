@@ -179,7 +179,29 @@
             <h2 class="exercice-ttl">Question 7</h2>
             <p class="exercice-txt">En réutilisant les scores de la question précédente, afficher le nom du joueur ayant obtenu le plus grand score.</p>
             <div class="exercice-sandbox">
-                
+                <?php
+                    $maxScore = $scorePlayer1;
+                    $winner = $namePlayer1;
+
+                    if ($scorePlayer2 > $maxScore) {
+                        $maxScore = $scorePlayer2;
+                        $winner = $namePlayer2;
+                    }
+                    if ($scorePlayer3 > $maxScore) {
+                        $maxScore = $scorePlayer3;
+                        $winner = $namePlayer3;
+                    }
+                    if ($scorePlayer4 > $maxScore) {
+                        $maxScore = $scorePlayer4;
+                        $winner = $namePlayer4;
+                    }
+                    if ($scorePlayer5 > $maxScore) {
+                        $maxScore = $scorePlayer5;
+                        $winner = $namePlayer5;
+                    }
+
+                    echo $winner;
+                ?>
             </div>
         </section>
 
