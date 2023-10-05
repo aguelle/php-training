@@ -53,6 +53,13 @@
                 $nameProduct3 = "potion";
                 $priceProduct3 = 5.20;
             ?>
+                <ul>
+            <?php
+                echo "<li>{$nameProduct1} - {$priceProduct1}</li>"
+                    . "<li>{$nameProduct2} - {$priceProduct2}</li>"
+                    . "<li>{$nameProduct3} - {$priceProduct3}</li>";
+            ?>
+                </ul>
             </div>
         </section>
 
