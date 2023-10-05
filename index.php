@@ -93,6 +93,12 @@
             <h2 class="exercice-ttl">Question 4</h2>
             <p class="exercice-txt">Affichez le prix le plus élevé des 3 produits ci-dessus.</p>
             <div class="exercice-sandbox">
+                <?php
+                $tabProductsPrices = [$priceProduct1, $priceProduct2, $priceProduct3];
+                echo max($tabProductsPrices);
+
+                echo max($priceProduct1, $priceProduct2, $priceProduct3);
+                ?>
                 
             </div>
         </section>
