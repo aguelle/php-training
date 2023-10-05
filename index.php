@@ -34,6 +34,7 @@
             <?php
                 $firstname = "Michel";
                 $score = 327;
+                echo "<p>{$firstname} a obtenu {$score} points à cette partie.</p>";
             ?>
             </div>
         </section>
