@@ -150,7 +150,26 @@
                 $scorePlayer4 = 134;
                 $namePlayer5 = "Kevin";
                 $scorePlayer5 = 103;
-            ?>
+                ?>
+                <ul>
+                <?php
+                    if ($scorePlayer1 >= 50 && $scorePlayer1 <= 150) {
+                        echo "<li>$namePlayer1</li>";
+                    }
+                    if ($scorePlayer2 >= 50 && $scorePlayer2 <= 150) {
+                        echo "<li>$namePlayer2</li>";
+                    }
+                    if ($scorePlayer3 >= 50 && $scorePlayer3 <= 150) {
+                        echo "<li>$namePlayer3</li>";
+                    }
+                    if ($scorePlayer4 >= 50 && $scorePlayer4 <= 150) {
+                        echo "<li>$namePlayer4</li>";
+                    }
+                    if ($scorePlayer5 >= 50 && $scorePlayer5 <= 150) {
+                        echo "<li>$namePlayer5</li>";
+                    }
+                ?>
+                </ul>
             </div>
         </section>
 
