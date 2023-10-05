@@ -72,6 +72,17 @@
                 $quantityProduct1 = 1;
                 $quantityProduct2 = 10;
                 $quantityProduct3 = 4;
+
+                $discount = (100 - 10) / 100;
+
+                $total = $quantityProduct1 * $priceProduct1;
+                $total += $quantityProduct2 * $priceProduct2;
+                $total += $quantityProduct3 * $priceProduct3;
+                
+                $total *= $discount;
+
+                echo $total;
+                // echo ($quantityProduct1*$priceProduct1+$quantityProduct2*$priceProduct2+$quantityProduct3*$priceProduct3)*$discount;
             ?>
             </div>
         </section>
