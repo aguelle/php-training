@@ -229,7 +229,6 @@
             }
 
             echo $longestName;
-
             ?>
             </div>
         </section>
@@ -247,7 +246,39 @@
             </ul>
             <p class="exercice-txt">Afficher la valeur de cette variable avec tous les détails.</p>
             <div class="exercice-sandbox">
-                
+                <?php
+                $players = [
+                    [
+                        'name' => $namePlayer1,
+                        'age' => 25,
+                        'score' => $scorePlayer1
+                    ],
+                    [
+                        'name' => $namePlayer2,
+                        'age' => 34,
+                        'score' => $scorePlayer2
+                    ],
+                    [
+                        'name' => $namePlayer3,
+                        'age' => 27,
+                        'score' => $scorePlayer3
+                    ],
+                    [
+                        'name' => $namePlayer4,
+                        'age' => 47,
+                        'score' => $scorePlayer4
+                    ],
+                    [
+                        'name' => $namePlayer5,
+                        'age' => 31,
+                        'score' => $scorePlayer5
+                    ]
+                ];
+
+
+                var_dump($players);
+
+?>
             </div>
         </section>
 
