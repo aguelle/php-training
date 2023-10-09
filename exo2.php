@@ -149,7 +149,15 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 7</h2>
             <p class="exercice-txt">Afficher les fruits dont la chaîne de caractère est composée de 5 caractères au maximum</p>
             <div class="exercice-sandbox">
-
+                    <ul>
+                        <?php
+                        foreach ($fruits as $fruit) {
+                            if (iconv_strlen($fruit) <= 5) {
+                                echo "<li> {$fruit}</li>";
+                            }
+                        }
+                        ?>
+                    </ul>
             </div>
         </section>
 
