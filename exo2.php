@@ -47,7 +47,13 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 2</h2>
             <p class="exercice-txt">Afficher les fruits dans une liste HTML non ordonnée</p>
             <div class="exercice-sandbox">
-
+                <ul>
+                <?php
+                    foreach($fruits as $fruit){
+                        echo '<li>'.$fruit.'</li>';
+                    }
+                ?>
+                </ul>
             </div>
         </section>
 
@@ -56,7 +62,13 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 3</h2>
             <p class="exercice-txt">Afficher les fruits dans une liste HTML non ordonnée avec pour chacun d'eux sa position dans la liste</p>
             <div class="exercice-sandbox">
-
+            <ul>
+            <?php
+                foreach($fruits as $index => $fruit){
+                    echo "<li>{$index} {$fruit}</li>";
+                }
+            ?>
+            </ul>
             </div>
         </section>
 
