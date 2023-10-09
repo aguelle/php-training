@@ -170,7 +170,25 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <p class="exercice-txt">Dans la phrase suivante : "<?= $breakfast ?>"</p>
             <p class="exercice-txt">Remplacez pomme par pêche et banane par mangue et affichez-la.</p>
             <div class="exercice-sandbox">
+                <?php
+            // 1st version
+            // $breakfast = "Tous les matins je mange une pêche et une mangue avec une cuillère de miel.";
+            // echo $breakfast;
 
+            // 2nd version
+            
+            $breakfast = str_replace('pomme', 'pêche', $breakfast);
+            $breakfast = str_replace('banane', 'mangue', $breakfast);
+            echo "<p>{$breakfast}</p>";
+
+            // 3rd version
+
+            echo '<p>'.str_replace(
+                ['pomme', 'banane'],
+                ['pêche', 'mangue'],
+                $breakfast).'</p>';
+
+            ?>
             </div>
         </section>
 
@@ -179,7 +197,7 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 9</h2>
             <p class="exercice-txt">Affichez la chaîne de caractère composée de l'ensemble des fruits de la liste, séparés par une virgule et un espace.</p>
             <div class="exercice-sandbox">
-
+                <?=implode(', ', $fruits)?>
             </div>
         </section>
 
@@ -193,7 +211,15 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 10</h2>
             <p class="exercice-txt">Afficher dans une liste HTML tous les fruits de la liste qui apparaissent dans la phrase suivante : "<?= $salad ?>"</p>
             <div class="exercice-sandbox">
-
+                <ul>
+                <?php
+                    foreach ($fruits as $fruit) {
+                        if (str_contains($salad, $fruit)) {
+                            echo "<li>$fruit</li>";
+                        }
+                    }
+                ?>
+                </ul>
             </div>
         </section>
     </div>
