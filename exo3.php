@@ -36,7 +36,10 @@ $prices = [3, 2, 2, 5, 8];
             <h2 class="exercice-ttl">Question 1</h2>
             <p class="exercice-txt">Ordonner le tableau des prix par ordre croissant et l'afficher en détail</p>
             <div class="exercice-sandbox">
-                
+                <?php 
+                sort($prices);
+                var_dump($prices);
+                ?>
             </div>
         </section>
 
@@ -45,7 +48,27 @@ $prices = [3, 2, 2, 5, 8];
             <h2 class="exercice-ttl">Question 2</h2>
             <p class="exercice-txt">Ajouter 1 euro à chaque prix</p>
             <div class="exercice-sandbox">
-                
+                <?php
+
+                    // $prices = array_map(fn($price) => $price + 1, $prices);
+                    // var_dump($prices);
+                    
+                    // foreach ($prices as $i => $price) {
+                    //     $prices[$i]++;
+                    // }
+                    // var_dump($prices);
+
+                    // for ($i = 0; $i < count($prices); $i++) {
+                    //     $prices[$i]++;
+                    // }
+                    // var_dump($prices);
+
+                    foreach ($prices as &$price) {
+                        $price++;
+                    }
+                    var_dump($prices);
+
+                ?>  
             </div>
         </section>
 
