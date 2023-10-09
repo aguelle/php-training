@@ -77,7 +77,30 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
             <h2 class="exercice-ttl">Question 4</h2>
             <p class="exercice-txt">Afficher 1 fruit sur 2 dans une liste HTML, en commençant par la fraise</p>
             <div class="exercice-sandbox">
+            <ul>
+            <?php
+                for  ($i = 0 ; $i <count($fruits); $i += 2){
+                    echo "<li>{$fruits[$i]}</li>";
+                }
+            ?>
+            </ul>
 
+            <ul>
+            <?php
+                foreach ($fruits as $index => $fruit) {
+                    if ($index % 2 === 0) {
+                        echo "<li>{$fruit}</li>";
+                    }
+
+                    // if ($index % 2 !== 0) continue;
+                    // echo "<li>{$fruit}</li>";
+
+                    // if ($index % 2 === 0) echo "<li>{$fruit}</li>";
+
+                    // echo $index % 2 ? '' : "<li>{$fruit}</li>";
+                }
+            ?>
+            </ul>
             </div>
         </section>
 
