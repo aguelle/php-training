@@ -143,7 +143,9 @@ $prices = [3, 2, 2, 5, 8];
             <h2 class="exercice-ttl">Question 7</h2>
             <p class="exercice-txt">En reprenant le prix total du panier constitué à la question précédente, appliquez-lui une taxe de 18%. Afficher le total taxe comprise.</p>
             <div class="exercice-sandbox">
-                
+                <?php
+                echo '<p> Montant total TTC : ' . number_format(array_sum($basket) * 1.18, 2) . ' €.'
+                ?>
             </div>
         </section>
 
