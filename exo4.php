@@ -47,13 +47,15 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
              * @return string
              */
             function turnArrayIntoString(array $array): string{
-                $result = '<ul> ';
-                foreach($array as $element){
-                    $result .= '<li>'.$element.'</li>';
-                }
-                return $result .= '</ul>';
+                // $result = '<ul> ';
+                // foreach($array as $element){
+                //     $result .= '<li>'.$element.'</li>';
+                // }
+                // return $result .= '</ul>';
 
-                // return '<ul>'.implode('', array_map(fn($v) => "<li>{$v}</li>", $array)).'</ul>';
+                // return '<ul>' . implode('', array_map(fn($v) => "<li>{$v}</li>", $array)) . '</ul>';
+                
+                return '<ul><li>' . implode('</li><li>', $array) . '</li></ul>';
             }
 
             echo turnArrayIntoString($array);
