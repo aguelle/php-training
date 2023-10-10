@@ -123,7 +123,18 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 4</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers. La fonction doit retourner les valeurs du tableau mulipliées par 2.</p>
             <div class="exercice-sandbox">
-                
+                <?php
+                    /**
+                     * Take an array and return it with value multiply by two
+                     *
+                     * @param array $array
+                     * @return array
+                     */
+                    function multiplyValueByTwo(array $array): array {
+                        return array_map(fn($value) => $value * 2, $array);
+                    };
+                    echo turnArrayIntoString(multiplyValueByTwo($array));
+                ?>
             </div>
         </section>
 
