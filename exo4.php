@@ -143,7 +143,23 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 4 bis</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers et un entier. La fonction doit retourner les valeurs du tableau divisées par le second paramètre</p>
             <div class="exercice-sandbox">
-                
+                <?php
+                /**
+                 * function that divides integer values of array by integer value of parameter. 
+                 *
+                 * @param array $array
+                 * @param integer $integer
+                 * @return array
+                 */
+                function divideArray(array $array, int $integer):array{
+                    $arrayDivide = [];
+                    foreach ($array as $key => $value) {
+                        $arrayDivide[] = $value / $integer; 
+                    }
+                return $arrayDivide;
+                }
+                var_dump(divideArray($array, 2))
+                ?>
             </div>
         </section>
 
