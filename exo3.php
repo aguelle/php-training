@@ -123,7 +123,18 @@ $prices = [3, 2, 2, 5, 8];
             <h2 class="exercice-ttl">Question 6</h2>
             <p class="exercice-txt">Composer un panier de fruits ne dépassant pas 12 euros, en sélectionnant chaque fruit dans l'ordre actuel.</p>
             <div class="exercice-sandbox">
-                
+                <?php
+                $sumMax = 12;
+                $basket = [];
+                foreach ($store as $fruit => $price) {
+                    if ($sumMax - $price >= 0){
+                        $sumMax -= $price;
+                        $basket[$fruit] = $price;
+                    }
+                }
+                var_dump($basket);
+                var_dump(array_sum($basket));
+                ?>
             </div>
         </section>
 
