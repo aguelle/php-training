@@ -177,17 +177,21 @@ $fruits = ["fraise", "banane", "pomme", "cerise", "abricot", "pêche", "ananas",
 
             // 2nd version
             
-            $breakfast = str_replace('pomme', 'pêche', $breakfast);
-            $breakfast = str_replace('banane', 'mangue', $breakfast);
-            echo "<p>{$breakfast}</p>";
+            // $breakfast = str_replace('pomme', 'pêche', $breakfast);
+            // $breakfast = str_replace('banane', 'mangue', $breakfast);
+            // echo "<p>{$breakfast}</p>";
 
-            // 3rd version
+            // 3rd versions
+
+            $count = 0;
 
             echo '<p>'.str_replace(
                 ['pomme', 'banane'],
                 ['pêche', 'mangue'],
-                $breakfast).'</p>';
-
+                $breakfast,
+                $count).'</p>';
+            
+            var_dump($count);
             ?>
             </div>
         </section>

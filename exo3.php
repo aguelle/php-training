@@ -220,6 +220,12 @@ $prices = [3, 2, 2, 5, 8];
                     if($price === max($store)) array_push($mostExpensive, $fruit);
                 };
                 echo "Les fruits les plus chers sont :" . implode(', ', $mostExpensive) . ". Leur prix est de : " . max($store) . ' €.';
+
+
+                $mostExpensive = array_filter($store, fn($p) => $p === max($store));
+
+                var_dump($mostExpensive);
+
                 ?>
             </div>
         </section>
