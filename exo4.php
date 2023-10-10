@@ -38,7 +38,28 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 1</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau et retourne la chaîne de caractère HTML permettant d'afficher les valeurs du tableau sous la forme d'une liste.</p>
             <div class="exercice-sandbox">
+                
+            <?php
+            /**
+             * Turn array into string as HTML list
+             *
+             * @param array $array
+             * @return string
+             */
+            function turnArrayIntoString(array $array): string{
+                $result = '<ul> ';
+                foreach($array as $element){
+                    $result .= '<li>'.$element.'</li>';
+                }
+                return $result .= '</ul>';
 
+                // return '<ul>'.implode('', array_map(fn($v) => "<li>{$v}</li>", $array)).'</ul>';
+            }
+
+            echo turnArrayIntoString($array);
+
+            ?>
+        
             </div>
         </section>
 
