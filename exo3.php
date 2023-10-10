@@ -191,7 +191,21 @@ $prices = [3, 2, 2, 5, 8];
             <h2 class="exercice-ttl">Question 10</h2>
             <p class="exercice-txt">Afficher le nom et le prix du fruit le moins cher</p>
             <div class="exercice-sandbox">
+            <?php
+                // $cheapestFruit = "";
+
+                // foreach ($store as $fruit => $price) {
+                //     if (!isset($cheapestPrice) || $price < $cheapestPrice) {
+                //         $cheapestFruit = $fruit;
+                //         $cheapestPrice = $price;
+                //     }
+                // }
+
+                // echo "$cheapestFruit : $cheapestPrice";
                 
+                $cheapestFruit = array_search(min($store), $store);
+                echo "{$cheapestFruit} : " . number_format($store[$cheapestFruit], 2) . " €.";
+            ?>
             </div>
         </section>
 
