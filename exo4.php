@@ -54,7 +54,7 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
                 // return $result .= '</ul>';
 
                 // return '<ul>' . implode('', array_map(fn($v) => "<li>{$v}</li>", $array)) . '</ul>';
-                
+
                 return '<ul><li>' . implode('</li><li>', $array) . '</li></ul>';
             }
 
@@ -70,7 +70,27 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 2</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers et retourne uniquement les valeurs paires. Afficher les valeurs du tableau sous la forme d'une liste HTML.</p>
             <div class="exercice-sandbox">
+                <?php 
+                /**
+                 * get list even from array.
+                 *
+                 * @param array $array
+                 * @return array
+                 */
+                function getListEven(array $array): array {
+                    // $arrayEven = [];
+                    // foreach($array as $value){
+                    //     if($value % 2 == 0){
+                    //         $arrayEven[] = $value;
+                    //     }
+                    // }
+                    // return $arrayEven;
+
+                    return array_filter($array, fn($v) => is_numeric($v) && !($v % 2));
+                }
+                echo turnArrayIntoString(getListEven($arrayB));
                 
+                ?>
             </div>
         </section>
 
@@ -79,7 +99,22 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 3</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers et retourne uniquement les entiers d'index pair</p>
             <div class="exercice-sandbox">
-                
+                <?php
+                function getIntsIndexPair(array $array) :array{
+                    // $result = [];
+                    // foreach($array as $index => $value) {
+                    //     if ($index%2 == 0) {
+                    //         $result[] = $value;  
+                    //     }
+                    // }
+                    // return $result;
+
+                    return array_filter($array, fn($k) => !($k%2), ARRAY_FILTER_USE_KEY);
+                }
+
+                var_dump(getIntsIndexPair($array ));
+                ?>  
+
             </div>
         </section>
 
