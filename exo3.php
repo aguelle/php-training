@@ -50,8 +50,8 @@ $prices = [3, 2, 2, 5, 8];
             <div class="exercice-sandbox">
                 <?php
 
-                    // $prices = array_map(fn($price) => $price + 1, $prices);
-                    // var_dump($prices);
+                    $prices = array_map(fn($price) => $price + 1, $prices);
+                    var_dump($prices);
                     
                     // foreach ($prices as $i => $price) {
                     //     $prices[$i]++;
@@ -63,9 +63,9 @@ $prices = [3, 2, 2, 5, 8];
                     // }
                     // var_dump($prices);
 
-                    foreach ($prices as &$price) {
-                        $price++;
-                    }
+                    // foreach ($prices as &$price) {
+                    //     $price++;
+                    // }
                     var_dump($prices);
 
                 ?>  
@@ -106,7 +106,15 @@ $prices = [3, 2, 2, 5, 8];
             <h2 class="exercice-ttl">Question 5</h2>
             <p class="exercice-txt">Afficher dans une liste HTML le nom des fruits ayant un prix pair</p>
             <div class="exercice-sandbox">
-                
+                <ul>
+                <?php
+                    foreach ($store as $fruit => $price) {
+                        if ($price % 2 === 0) {
+                            echo "<li>{$fruit}</li>";
+                        }
+                    }
+                ?>
+                </ul>
             </div>
         </section>
 
