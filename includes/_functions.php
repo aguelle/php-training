@@ -4,9 +4,11 @@
  * Turn array into string as HTML list
  *
  * @param array $array
+ * @param string $ulClass Optionnal CSS class (or classes) to UL element
+ * @param string $liClass Optionnal CSS class (or classes) to LI element
  * @return string
  */
-function turnArrayIntoString(array $array): string
+function turnArrayIntoString(array $array, string $ulClass = NULL, string $liClass = NULL): string
 {
     // $result = '<ul> ';
     // foreach($array as $element){
@@ -16,7 +18,9 @@ function turnArrayIntoString(array $array): string
 
     // return '<ul>' . implode('', array_map(fn($v) => "<li>{$v}</li>", $array)) . '</ul>';
 
-    return '<ul><li>' . implode('</li><li>', $array) . '</li></ul>';
+    $ulClass = $ulClass ? " class=\"{$ulClass}\"" : '';
+    $liClass = $liClass ? " class=\"{$liClass}\"" : '';
+    return "<ul{$ulClass}><li{$liClass}>" . implode("</li><li{$liClass}>", $array) . '</li></ul>';
 }
 
 /**
@@ -169,3 +173,31 @@ function extractNFirstValueArray(array $array, int $length): array
 
     // return array_filter($array, fn($k) => $k <= $length - 1, ARRAY_FILTER_USE_KEY);
 };
+
+
+// ---------------
+// SERIES
+// ---------------
+
+/**
+ * Return serie title and main image into HTML string.
+ *
+ * @param array $serie
+ * @return string
+ */
+function getSerieHTML(array $serie): string
+{
+    return "<h3>{$serie['name']}</h3>"
+        . "<img src=\"{$serie['image']}\">";
+}
+
+/**
+ * Return HTML to display series into list tags.
+ *
+ * @param array $series
+ * @return string
+ */
+function getHTMLSeries(array $series): string
+{
+    return turnArrayIntoString(array_map('getSerieHTML', $series), 'series', 'series__itm');
+}
