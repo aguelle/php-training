@@ -237,18 +237,24 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
                  *
                  * @param array $array
                  * @param array $arrayA
+                 * @param bool $unique facultative parameter : when set to true, the function deduplicates the resulted array
                  * @return array
                  */
-                function getDiffFromArrays (array $array, array $arrayA): array {
-                    // $arrayDiff = [];
-                    // foreach ($array as $value) {
-                    //     if (!in_array($value, $arrayA)) {
-                    //         $arrayDiff[] = $value;
-                    //     }
-                    // }
-                    // return $arrayDiff;
+                function getDiffFromArrays (array $array, array $arrayA, bool $unique = false): array {
+                    $arrayDiff = [];
+                    foreach ($array as $value) {
+                        if (
+                            !in_array($value, $arrayA) && (!$unique || ($unique && !in_array($value, $arrayDiff)) )
+                        ) {
+                            $arrayDiff[] = $value;
+                        }
+                    }
 
-                    return array_filter($array, fn($v) => !in_array($v, $arrayA));
+                    return $arrayDiff;
+
+                    // return $unique ? array_unique($arrayDiff) : $arrayDiff;
+
+                    // return array_filter($array, fn($v) => !in_array($v, $arrayA));
 
                     // return array_filter($array, function($v) use ($arrayA) {
                     //     return !in_array($v, $arrayA);
@@ -256,7 +262,9 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
                 }
 
                 echo turnArrayIntoString(getDiffFromArrays($array, $arrayA));
-                
+
+                echo '<br>';
+
                 echo turnArrayIntoString(array_diff($array, $arrayA));
                 
                 ?>
@@ -269,7 +277,13 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 8</h2>
             <p class="exercice-txt">Réécrire la fonction précédente pour lui ajouter un paramètre booléen facultatif. Si celui-ci est à true, le tableau retourné sera sans doublons</p>
             <div class="exercice-sandbox">
-                
+            <?php
+                echo turnArrayIntoString(getDiffFromArrays($arrayA, $arrayB, true));
+
+                echo '<br>';
+
+                echo turnArrayIntoString(getDiffFromArrays($arrayA, $arrayB));
+            ?>
             </div>
         </section>
 
