@@ -1,5 +1,7 @@
 <?php
 
+require_once 'includes/_functions.php';
+
 // Json file
 try {
     $fileContent = file_get_contents("datas/series.json");
@@ -49,7 +51,18 @@ try {
             <h2 class="exercice-ttl">Question 1</h2>
             <p class="exercice-txt">Récupérer dans un tableau puis afficher l'ensemble des plateformes de diffusion des séries. Afficher les par ordre alphabétique.</p>
             <div class="exercice-sandbox">
-                
+            <?php
+                $arrayPlatforms = [];
+                foreach ($series as $serie) {
+                    $arrayPlatforms[] = $serie['availableOn'];
+                }
+
+                $arrayPlatforms = removeDuplicatedValuesInArray($arrayPlatforms);
+
+                sort($arrayPlatforms);
+
+                echo turnArrayIntoString($arrayPlatforms);
+            ?>
             </div>
         </section>
 
