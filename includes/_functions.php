@@ -188,7 +188,7 @@ function extractNFirstValueArray(array $array, int $length): array
 function getSerieHTML(array $serie): string
 {
     return "<h3>{$serie['name']}</h3>"
-        . "<img src=\"{$serie['image']}\">";
+        . "<img class=\"series__img\" src=\"{$serie['image']}\">";
 }
 
 /**

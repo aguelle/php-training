@@ -1,0 +1,27 @@
+.series {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 !important;
+}
+
+.series__itm {
+    list-style: none;
+    text-align: center;
+}
+
+.series__img {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+    .series {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .series {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
