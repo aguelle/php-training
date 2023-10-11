@@ -76,7 +76,7 @@ try {
             <p class="exercice-txt">Afficher la liste de toutes les séries avec l'image principale et son titre</p>
             <p class="exercice-txt">Afficher une seule série par ligne sur les plus petits écrans, 2 séries par ligne sur les écrans intermédiaires et 4 séries par ligne sur un écran d'ordinateur.</p>
             <div class="exercice-sandbox">
-                <?=getHTMLSeries($series)?>
+                <?= getHTMLSeries($series) ?>
             </div>
         </section>
 
@@ -96,7 +96,14 @@ try {
             <p class="exercice-txt">Si l'URL de la page appelée comporte l'identifiant d'une série, alors afficher toutes les informations de la série ci-dessous.</p>
             <p class="exercice-txt">Si l'identifiant ne correspond à aucune série, afficher un message d'erreur.</p>
             <div class="exercice-sandbox">
+                <?php
 
+                // if (array_key_exists('serie', $_GET)) {
+                if (isset($_GET['serie'])) {
+                    echo getSerieHTML(array_values(array_filter($series, fn($s) => $s['id'] === intval($_GET['serie'])))[0]);
+                }
+
+                ?>
             </div>
         </section>
 

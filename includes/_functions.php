@@ -187,7 +187,9 @@ function extractNFirstValueArray(array $array, int $length): array
  */
 function getSerieHTML(array $serie): string
 {
-    return "<h3>{$serie['name']}</h3>"
+    return '<h3>'
+        . '<a href="' . getSerieURL($serie) . "\">{$serie['name']}</a>"
+        . '</h3>'
         . "<img class=\"series__img\" src=\"{$serie['image']}\">";
 }
 
@@ -200,4 +202,15 @@ function getSerieHTML(array $serie): string
 function getHTMLSeries(array $series): string
 {
     return turnArrayIntoString(array_map('getSerieHTML', $series), 'series', 'series__itm');
+}
+
+/**
+ * Get serie URL page from serie data.
+ *
+ * @param array $serie
+ * @return string
+ */
+function getSerieURL(array $serie): string
+{
+    return "?serie={$serie['id']}";
 }
