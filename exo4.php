@@ -168,7 +168,28 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 5</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers ou de chaînes de caractères et retourne le tableau sans doublons</p>
             <div class="exercice-sandbox">
-                
+                <?php
+                /**
+                 * Return an array without Duplicates
+                 *
+                 * @param array $array
+                 * @return array
+                 */
+                function removeDuplicatedValuesInArray (array $array): array {
+                    $newArray = [];
+                    foreach ($array as $value) {
+                        if (in_array($value, $newArray)) continue;
+                        $newArray[] = $value;
+                    }
+                    return $newArray;
+                }
+                var_dump(removeDuplicatedValuesInArray($arrayA));
+
+                var_dump(array_unique($arrayA));   
+
+                // var_dump(array_keys(array_count_values($arrayA)));    
+
+                ?>
             </div>
         </section>
 
@@ -177,7 +198,31 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 6</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre 2 tableaux et retourne un tableau représentant l'intersection des 2</p>
             <div class="exercice-sandbox">
-                
+                <?php
+
+                /**
+                 * function returns an array including common elements of given arrays.
+                 *
+                 * @param array $array1
+                 * @param array $array2
+                 * @return array
+                 */
+                    function getIntersectionOfArrays (array $array1, array $array2) : array {
+                        // $newArray = [];
+                        // foreach ($array1 as $element) {
+                        //     if(in_array($element, $array2)) {
+                        //         $newArray[] = $element;
+                        //     }                            
+                        // }
+                        // return $newArray;
+
+                        return array_filter($array1, fn($v) => in_array($v, $array2));
+                    }
+
+                    var_dump(getIntersectionOfArrays($arrayA, $arrayB));
+
+                    var_dump(array_intersect($arrayA, $arrayB));
+?>
             </div>
         </section>
 
@@ -186,7 +231,35 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 7</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre 2 tableaux et retourne un tableau des valeurs du premier tableau qui ne sont pas dans le second</p>
             <div class="exercice-sandbox">
+                <?php
+                /**
+                 * Returns first array values which are not in the second one.
+                 *
+                 * @param array $array
+                 * @param array $arrayA
+                 * @return array
+                 */
+                function getDiffFromArrays (array $array, array $arrayA): array {
+                    // $arrayDiff = [];
+                    // foreach ($array as $value) {
+                    //     if (!in_array($value, $arrayA)) {
+                    //         $arrayDiff[] = $value;
+                    //     }
+                    // }
+                    // return $arrayDiff;
+
+                    return array_filter($array, fn($v) => !in_array($v, $arrayA));
+
+                    // return array_filter($array, function($v) use ($arrayA) {
+                    //     return !in_array($v, $arrayA);
+                    // });
+                }
+
+                echo turnArrayIntoString(getDiffFromArrays($array, $arrayA));
                 
+                echo turnArrayIntoString(array_diff($array, $arrayA));
+                
+                ?>
             </div>
         </section>
 
