@@ -52,12 +52,16 @@ try {
             <p class="exercice-txt">Récupérer dans un tableau puis afficher l'ensemble des plateformes de diffusion des séries. Afficher les par ordre alphabétique.</p>
             <div class="exercice-sandbox">
             <?php
-                $arrayPlatforms = [];
-                foreach ($series as $serie) {
-                    $arrayPlatforms[] = $serie['availableOn'];
-                }
+                // $arrayPlatforms = [];
+                // foreach ($series as $serie) {
+                //     $arrayPlatforms[] = $serie['availableOn'];
+                // }
 
-                $arrayPlatforms = removeDuplicatedValuesInArray($arrayPlatforms);
+                // $arrayPlatforms = array_map(fn($s) => $s['availableOn'], $series);
+
+                $arrayPlatforms = array_column($series, 'availableOn');
+
+                $arrayPlatforms = array_unique($arrayPlatforms);
 
                 sort($arrayPlatforms);
 
