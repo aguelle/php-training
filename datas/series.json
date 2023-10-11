@@ -2,7 +2,7 @@
     {
        "id":1,
        "name":"Arcane",
-       "launchYear":2021,
+       "releaseYear":2021,
        "country":"U.S.A.",
        "availableOn":"Netflix",
        "styles":[
@@ -29,7 +29,7 @@
     {
        "id":2,
        "name":"Game of Thrones",
-       "launchYear":2011,
+       "releaseYear":2011,
        "country":"U.S.A.",
        "availableOn":"OCS",
        "styles":[
@@ -55,7 +55,7 @@
     {
        "id":3,
        "name":"Breaking Bad",
-       "launchYear":2008,
+       "releaseYear":2008,
        "country":"U.S.A.",
        "availableOn":"Netflix",
        "styles":[
@@ -79,7 +79,7 @@
     {
        "id":4,
        "name":"Chernobyl",
-       "launchYear":2019,
+       "releaseYear":2019,
        "country":"U.S.A.",
        "availableOn":"OCS",
        "styles":[
@@ -102,7 +102,7 @@
     {
        "id":5,
        "name":"Peaky Blinders",
-       "launchYear":2013,
+       "releaseYear":2013,
        "country":"Grande-Bretagne",
        "availableOn":"Netflix",
        "styles":[
@@ -127,7 +127,7 @@
     {
        "id":6,
        "name":"Shingeki no Kyojin",
-       "launchYear":2013,
+       "releaseYear":2013,
        "country":"Japon",
        "availableOn":"Netflix",
        "styles":[
@@ -152,7 +152,7 @@
     {
        "id":7,
        "name":"Sherlock",
-       "launchYear":2010,
+       "releaseYear":2010,
        "country":"Grande-Bretagne",
        "availableOn":"Amazon",
        "styles":[
@@ -178,7 +178,7 @@
     {
        "id":8,
        "name":"The Queen's Gambit",
-       "launchYear":2020,
+       "releaseYear":2020,
        "country":"U.S.A.",
        "availableOn":"Netflix",
        "styles":[
@@ -202,7 +202,7 @@
     {
        "id":9,
        "name":"When They See Us",
-       "launchYear":2019,
+       "releaseYear":2019,
        "country":"U.S.A.",
        "availableOn":"Netflix",
        "styles":[
@@ -225,7 +225,7 @@
     {
        "id":10,
        "name":"Stranger Things",
-       "launchYear":2016,
+       "releaseYear":2016,
        "country":"U.S.A.",
        "availableOn":"Netflix",
        "styles":[
@@ -250,7 +250,7 @@
     {
        "id":11,
        "name":"Hunter X Hunter",
-       "launchYear":2011,
+       "releaseYear":2011,
        "country":"Japon",
        "availableOn":"Netflix",
        "styles":[
@@ -278,7 +278,7 @@
     {
        "id":12,
        "name":"Heartstopper",
-       "launchYear":2022,
+       "releaseYear":2022,
        "country":"Grande-Bretagne",
        "availableOn":"Netflix",
        "styles":[
@@ -302,7 +302,7 @@
     {
        "id":13,
        "name":"Vikings",
-       "launchYear":2013,
+       "releaseYear":2013,
        "country":"Canada",
        "availableOn":"Netflix",
        "styles":[
@@ -327,7 +327,7 @@
     {
        "id":14,
        "name":"True Detective",
-       "launchYear":2014,
+       "releaseYear":2014,
        "country":"U.S.A.",
        "availableOn":"OCS",
        "styles":[
@@ -352,7 +352,7 @@
     {
        "id":15,
        "name":"Westworld",
-       "launchYear":2016,
+       "releaseYear":2016,
        "country":"U.S.A.",
        "availableOn":"OCS",
        "styles":[
@@ -379,7 +379,7 @@
     {
        "id":16,
        "name":"Shameless",
-       "launchYear":2011,
+       "releaseYear":2011,
        "country":"U.S.A.",
        "availableOn":"Amazon",
        "styles":[
@@ -403,7 +403,7 @@
     {
        "id":17,
        "name":"One Piece",
-       "launchYear":1999,
+       "releaseYear":1999,
        "country":"Japon",
        "availableOn":"ADN",
        "styles":[
