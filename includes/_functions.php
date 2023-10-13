@@ -183,14 +183,32 @@ function extractNFirstValueArray(array $array, int $length): array
  * Return serie title and main image into HTML string.
  *
  * @param array $serie
+ * @param bool $details If true, displays all details (optionnal)
  * @return string
  */
-function getSerieHTML(array $serie): string
+function getSerieHTML(array $serie, bool $details = false): string
 {
-    return '<h3>'
+    $html = '<h3>'
         . '<a href="' . getSerieURL($serie) . "\">{$serie['name']}</a>"
         . '</h3>'
         . "<img class=\"series__img\" src=\"{$serie['image']}\">";
+
+    if ($details) {
+        $html .= '<ul>'
+            . '<li>Date de lancement : ' . $serie['releaseYear'] . '</li>'
+            . '<li>Pays : ' . $serie['country'] . '</li>'
+            . '<li>Plateforme : ' . $serie['availableOn'] . '</li>'
+            . '<li>Styles : ' . turnArrayIntoString($serie['styles']) . '</li>'
+            . '<li>Réalisateurs : ' . turnArrayIntoString($serie['createdBy']) . '</li>'
+            . '<li>Acteurs : ' . turnArrayIntoString($serie['actors']) . '</li>'
+            . '<li>Durée des épisodes : ' . $serie['episodeDurationInMinutes'] . ' minutes</li>'
+            . '<li>Nb de saisons : ' . $serie['numberOfSeasons'] . '</li>'
+            . '<li>Nb d\'épisodes : ' . $serie['numberOfEpisods'] . '</li>'
+            . '<li>Toujours en cours : ' . ($serie['ongoing'] ? 'oui' : 'non') . '</li>'
+            . '</ul>';
+    }
+
+    return $html;
 }
 
 /**
@@ -213,4 +231,22 @@ function getHTMLSeries(array $series): string
 function getSerieURL(array $serie): string
 {
     return "?serie={$serie['id']}";
+}
+
+/**
+ * Returns an array if a serie with the given id exists.
+ * Returns NULL if not.
+ *
+ * @param integer $id
+ * @return array|null
+ */
+function getSerieDataFromId(int $id): ?array
+{
+    global $series;
+
+    $result = array_filter($series, fn ($s) => $s['id'] === $id);
+
+    if (sizeof($result) !== 1) return NULL;
+
+    return array_values($result)[0];
 }

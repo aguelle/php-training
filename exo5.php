@@ -98,9 +98,12 @@ try {
             <div class="exercice-sandbox">
                 <?php
 
-                // if (array_key_exists('serie', $_GET)) {
                 if (isset($_GET['serie'])) {
-                    echo getSerieHTML(array_values(array_filter($series, fn($s) => $s['id'] === intval($_GET['serie'])))[0]);
+                    $serie = getSerieDataFromId(intval($_GET['serie']));
+
+                    echo is_array($serie) ? getSerieHTML($serie, true) : '<p>Cette série n\'existe pas.</p>';
+                } else {
+                    echo '<p>Aucune série à afficher</p>';
                 }
 
                 ?>
