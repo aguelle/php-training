@@ -1,3 +1,10 @@
+<?php
+
+include_once 'includes/_config.php';
+require_once 'includes/_functions.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -13,16 +20,9 @@
     <div class="container">
         <header class="header">
             <h1 class="main-ttl">Introduction PHP - Exo 6</h1>
-            <nav class="main-nav">
-                <ul class="main-nav-list">
-                    <li><a href="index.php" class="main-nav-link">Entrainement</a></li>
-                    <li><a href="exo2.php" class="main-nav-link">Donnez moi des fruits</a></li>
-                    <li><a href="exo3.php" class="main-nav-link">Donnez moi de la thune</a></li>
-                    <li><a href="exo4.php" class="main-nav-link">Donnez moi des fonctions</a></li>
-                    <li><a href="exo5.php" class="main-nav-link">Netflix</a></li>
-                    <li><a href="exo6.php" class="main-nav-link active">Mini-site</a></li>
-                </ul>
-            </nav>
+            <?php
+            echo generateHtmlNav($pages);
+            ?>
         </header>
 
         <section class="exercice">
@@ -35,7 +35,11 @@
             <p class="exercice-txt">Créez un tableau listant toutes les pages du site et contenant toutes les données qui leurs sont associées.</p>
             <p class="exercice-txt">Afficher l'intégralité du tableau sur la page.</p>
             <div class="exercice-sandbox">
+                <?php
 
+                var_dump($pages);
+
+                ?>
             </div>
         </section>
 
@@ -45,7 +49,9 @@
             <p class="exercice-txt">Implémenter une fonction qui génére le code HTML du menu de navigation du site.</p>
             <p class="exercice-txt">Utiliser cette fonction pour afficher le menu sur l'ensemble des pages du site.</p>
             <div class="exercice-sandbox">
-
+                <?php
+                echo generateHtmlNav($pages);
+                ?>
             </div>
         </section>
 

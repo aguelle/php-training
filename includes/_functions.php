@@ -321,3 +321,37 @@ function displayStylesList(array $series): void
 
     echo turnArrayIntoString($stylesText);
 }
+
+
+// ---------------
+// GLOBAL INTERFACE
+// ---------------
+
+/**
+ * Generate HTML link for the given page.
+ *
+ * @param array $page
+ * @return string
+ */
+function generatePageLink(array $page): string
+{
+    return '<a href="' . $page['file'] . '" class="main-nav-link' . (basename($_SERVER['SCRIPT_NAME']) === $page['file']  ? ' active' : '') . '">' . $page['name'] . '</a>';
+}
+
+/**
+ * Generate HTML main navigation from pages data.
+ *
+ * @param array $pages
+ * @return string
+ */
+function generateHtmlNav(array $pages): string
+{
+    // $string = '<nav class="main-nav"><ul class="main-nav-list">';
+    // foreach ($pages as $page) {
+    //     $string .= '<li><a href="' . $page['file'] . '" class="main-nav-link">' . $page['name'] . '</a></li>';
+    // }
+    // $string .= '</ul></nav>';
+
+    $string = '<nav class="main-nav">' . turnArrayIntoString(array_map('generatePageLink', $pages), 'main-nav-list') . '</nav>';
+    return $string;
+}
