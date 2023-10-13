@@ -71,7 +71,7 @@ try {
         </section>
 
         <!-- QUESTION 2 -->
-        <section class="exercice">
+        <section class="exercice" id="question2">
             <h2 class="exercice-ttl">Question 2</h2>
             <p class="exercice-txt">Afficher la liste de toutes les séries avec l'image principale et son titre</p>
             <p class="exercice-txt">Afficher une seule série par ligne sur les plus petits écrans, 2 séries par ligne sur les écrans intermédiaires et 4 séries par ligne sur un écran d'ordinateur.</p>
@@ -82,7 +82,7 @@ try {
 
                 if (isset($_GET['style'])) {
                     $style = urldecode($_GET['style']);
-                    
+
                     // $filteredSeries = [];
                     // foreach ($series as $serie) {
                     //     if (in_array($style, $serie['styles'])) {

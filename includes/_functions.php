@@ -230,7 +230,7 @@ function getHTMLSeries(array $series): string
  */
 function getSerieURL(array $serie): string
 {
-    return "?serie={$serie['id']}";
+    return "?serie={$serie['id']}#question4";
 }
 
 /**
@@ -241,7 +241,7 @@ function getSerieURL(array $serie): string
  */
 function getStyleURL(string $style): string
 {
-    return '?style=' . urlencode($style);
+    return '?style=' . urlencode($style) . '#question2';
 }
 
 
