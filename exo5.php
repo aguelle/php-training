@@ -76,7 +76,28 @@ try {
             <p class="exercice-txt">Afficher la liste de toutes les séries avec l'image principale et son titre</p>
             <p class="exercice-txt">Afficher une seule série par ligne sur les plus petits écrans, 2 séries par ligne sur les écrans intermédiaires et 4 séries par ligne sur un écran d'ordinateur.</p>
             <div class="exercice-sandbox">
-                <?= getHTMLSeries($series) ?>
+                <?php
+                
+                $seriesToDisplay = $series;
+
+                if (isset($_GET['style'])) {
+                    $style = urldecode($_GET['style']);
+                    
+                    // $filteredSeries = [];
+                    // foreach ($series as $serie) {
+                    //     if (in_array($style, $serie['styles'])) {
+                    //         $filteredSeries[] = $serie;
+                    //     }
+                    // }
+
+                    $seriesToDisplay = array_filter($series, fn($s) => in_array($style, $s['styles']));
+                }
+
+                echo getHTMLSeries($seriesToDisplay);
+                
+                // echo getHTMLSeries(isset($_GET['style']) ? array_filter($series, fn($s) => in_array(urldecode($_GET['style']), $s['styles'])) : $series);
+                
+                ?>
             </div>
         </section>
 
