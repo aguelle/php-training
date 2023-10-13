@@ -234,6 +234,18 @@ function getSerieURL(array $serie): string
 }
 
 /**
+ * Get style URL page.
+ *
+ * @param string $style
+ * @return string
+ */
+function getStyleURL(string $style): string
+{
+    return '?style=' . urlencode($style);
+}
+
+
+/**
  * Returns an array if a serie with the given id exists.
  * Returns NULL if not.
  *
@@ -251,14 +263,61 @@ function getSerieDataFromId(int $id): ?array
     return array_values($result)[0];
 }
 
+
 /**
- * Returns all series styles in a new array
+ * Counts series By style and return an associative array 
+ * styleName => serieCounter
  *
  * @param array $series
  * @return array
  */
-function getSeriesStyles(array $series): array {
-    $arrayStyles = array_unique(array_merge(...array_column($series, 'styles')));
-    sort($arrayStyles);
+function countSeriesByStyles(array $series): array
+{
+    // $stylesCounters = [];
+    // foreach($series as $serie) {
+    //     foreach ($serie['styles'] as $style) {
+    //         if (isset($stylesCounters[$style])) {
+    //             $stylesCounters[$style]++;
+    //         }
+    //         else {
+    //             $stylesCounters[$style] = 1;
+    //         }
+    //     }
+    // }
+
+    // var_dump($stylesCounters);
+
+    $arrayStyles = array_count_values(array_merge(...array_column($series, 'styles')));
+
+    ksort($arrayStyles);
     return $arrayStyles;
+}
+
+
+/**
+ * Return HTML link for the given style name
+ *
+ * @param string $style
+ * @param integer $count
+ * @return string
+ */
+function generateStyleLink(string $style, int $count): string
+{
+    return "<a href=\"" . getStyleURL($style) . "\">{$style} ({$count})</a>";
+}
+
+
+/**
+ * Displays styles menu.
+ *
+ * @param array $series
+ * @return array
+ */
+function displayStylesList(array $series): void
+{
+    $stylesCounters = countSeriesByStyles($series);
+
+    $stylesText = array_map('generateStyleLink', array_keys($stylesCounters), array_values($stylesCounters));
+
+    echo turnArrayIntoString($stylesText);
 }
