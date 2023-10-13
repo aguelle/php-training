@@ -20,9 +20,7 @@ require_once 'includes/_functions.php';
     <div class="container">
         <header class="header">
             <h1 class="main-ttl">Introduction PHP - Exo 6</h1>
-            <?php
-            echo generateHtmlNav($pages);
-            ?>
+            <?= generateHtmlNav($pages)?>
         </header>
 
         <section class="exercice">
@@ -37,6 +35,7 @@ require_once 'includes/_functions.php';
             <div class="exercice-sandbox">
                 <?php
 
+                var_dump($_SERVER);
                 var_dump($pages);
 
                 ?>

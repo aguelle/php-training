@@ -1,5 +1,8 @@
 <?php
 
+include_once 'includes/_config.php';
+require_once 'includes/_functions.php';
+
 $fruits = ["fraise", "banane", "pomme", "cerise", "ananas"];
 
 $prices = [3, 2, 2, 5, 8];
@@ -20,16 +23,7 @@ $prices = [3, 2, 2, 5, 8];
     <div class="container">
         <header class="header">
             <h1 class="main-ttl">Introduction PHP - Exo 3</h1>
-            <nav class="main-nav">
-                <ul class="main-nav-list">
-                    <li><a href="index.php" class="main-nav-link">Entrainement</a></li>
-                    <li><a href="exo2.php" class="main-nav-link">Donnez moi des fruits</a></li>
-                    <li><a href="exo3.php" class="main-nav-link active">Donnez moi de la thune</a></li>
-                    <li><a href="exo4.php" class="main-nav-link">Donnez moi des fonctions</a></li>
-                    <li><a href="exo5.php" class="main-nav-link">Netflix</a></li>
-                    <li><a href="exo6.php" class="main-nav-link">Mini-site</a></li>
-                </ul>
-            </nav>
+            <?= generateHtmlNav($pages)?>
         </header>
         <!-- QUESTION 1 -->
         <section class="exercice">
