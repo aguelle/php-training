@@ -250,3 +250,15 @@ function getSerieDataFromId(int $id): ?array
 
     return array_values($result)[0];
 }
+
+/**
+ * Returns all series styles in a new array
+ *
+ * @param array $series
+ * @return array
+ */
+function getSeriesStyles(array $series): array {
+    $arrayStyles = array_unique(array_merge(...array_column($series, 'styles')));
+    sort($arrayStyles);
+    return $arrayStyles;
+}
